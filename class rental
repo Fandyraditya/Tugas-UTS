@@ -1,0 +1,175 @@
+package com.company;
+
+import java.util.Scanner;
+public class rental {
+    int hari;
+    int harga;
+    int sewa;
+    int denda;
+    double mobil;
+    double sepeda;
+    Scanner input = new Scanner(System.in);
+    //    konstructor over loading rental untuk sepeda
+    public rental(int sepeda,int denda, int hari ){
+        this.sewa=sewa;
+        System.out.println("Sewa perhari :"+sewa);
+    }
+    //    konstructor over loading rental untu motor
+    public rental(int sewa){
+        this.sewa=sewa;
+        System.out.println("Sewa perhari :"+sewa);
+    }
+    //    konstructor over loading rental untuk mobil
+    public rental(int mobil,int hari){
+        this.mobil=mobil;
+        this.hari=hari;
+        int byr=mobil*hari;
+        System.out.println("Sewa perhari :"+byr);
+    }
+    public static void pilihan(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Silahkan pilih Kendaraan :");
+        System.out.println("1. sepeda");
+        System.out.println("2. motor");
+        System.out.println("3. mobil");
+        System.out.print("Masukkan pilihan : ");
+        int pilih = input.nextInt();
+        switch(pilih){
+            case 1:
+                rental.sepeda();
+                break;
+            case 2:
+                rental.motor();
+                break;
+            case 3:
+                rental.mobil();
+                break;
+        }
+
+
+    }
+    //    methode sepeda
+    public static void sepeda(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("======================");
+        System.out.println("Pilih Jenis Sepeda");
+        System.out.println("======================");
+        System.out.println("1.Polygon");
+        System.out.println("2.Wimcycle");
+        System.out.println("3.United");
+        System.out.println("4.Pacific");
+        System.out.print("Masukkan pilihan : ");
+        int pilih1=input.nextInt();
+        switch(pilih1){
+            case 1:
+                rental Polygon=new rental(15000);
+                Polygon.tampilsepeda();
+                break;
+            case 2:
+                rental Wimcycle=new rental(10000);
+                Wimcycle.tampilsepeda();
+                break;
+            case 3:
+                rental United=new rental(10000);
+                United.tampilsepeda();
+                break;
+            case 4:
+                rental Pacific=new rental(10000);
+                Pacific.tampilsepeda();
+                break;
+        }
+    }
+    //    methode motor
+    public static void motor(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("======================");
+        System.out.println("Pilih Jenis Motor");
+        System.out.println("======================");
+        System.out.println("1.Yamaha nmax");
+        System.out.println("2.Honda beat");
+        System.out.println("3.Honda vario");
+        System.out.println("4.Kawasaki klx");
+        System.out.print("Masukkan pilihan : ");
+        int pilih1=input.nextInt();
+        switch(pilih1){
+            case 1:
+                rental nmax=new rental(100000);
+                nmax.tampilmotor();
+                break;
+            case 2:
+                rental beat=new rental(70000);
+                beat.tampilmotor();
+                break;
+            case 3:
+                rental vario=new rental(80000);
+                vario.tampilmotor();
+                break;
+            case 4:
+                rental klx=new rental(50000);
+                klx.tampilmotor();
+                break;
+        }
+    }
+    //    methode mobil
+    public static void mobil(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("======================");
+        System.out.println("Pilih Mobil ");
+        System.out.println("======================");
+        System.out.println("1.Avanza");
+        System.out.println("2.Innova");
+        System.out.println("3.fortuner");
+        System.out.println("4.ertiga");
+        System.out.println("5.carry");
+        System.out.print("Masukka pilihan : ");
+        int pilih2=input.nextInt();
+        switch(pilih2){
+            case 1:
+                rental avanza=new rental(400000,1);
+                avanza.tampilmobil();
+                break;
+            case 2:
+                rental Innova=new rental(450000,1);
+                Innova.tampilmobil();
+                break;
+            case 3:
+                rental fortuner=new rental(500000,1);
+                fortuner.tampilmobil();
+                break;
+            case 4:
+                rental ertiga=new rental(400000,1);
+                ertiga.tampilmobil();
+                break;
+            case 5:
+                rental carry=new rental(250000,1);
+                carry.tampilmobil();
+        }
+    }
+    void tampilsepeda(){
+        int jumlahharir2;
+        Scanner input = new Scanner(System.in);
+        System.out.print("lama sewa:");
+        int jmljam=input.nextInt();
+        jumlahharir2=jmljam*sewa+denda;
+        System.out.print("Anda memilih sepeda");
+        System.out.println("Dengan harga sewa : "+jumlahharir2);
+    }
+    void tampilmotor(){
+        int jumlahharir2;
+        Scanner input = new Scanner(System.in);
+        System.out.print("lama sewa:");
+        int jmlhari=input.nextInt();
+        jumlahharir2=jmlhari*sewa;
+        System.out.print("Anda memilih motor");
+        System.out.println("Dengan harga sewa : "+jumlahharir2);
+    }
+    void tampilmobil(){
+        int jumlahhari;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Lama sewa :");
+        int jmlhari=input.nextInt();
+        jumlahhari=(int) (jmlhari*mobil*hari);
+        System.out.print("Anda memilih mobil");
+        System.out.println("Dengan harga sewa : "+jumlahhari);
+    }
+}
