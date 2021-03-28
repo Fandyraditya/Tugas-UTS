@@ -1,0 +1,16 @@
+package com.company;
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        com.company.rental.pilihan();
+        System.out.print("Transaksi lagi Ya=1 Tidak=2 : ");
+        int hari=input.nextInt();
+        if(hari==1){
+            //  pemangilan kelas rental dan methode pilihan
+            //nama class.nama methode
+            com.company.rental.pilihan();
+        }
+
+    }
+}
